@@ -1,10 +1,8 @@
-/* тема */
-
 :root {
-    --color-shapka-bg: #a100ff; 
+    --color-header-bg: #a100ff; 
     --color-knopka-bg: #280079;
-    --color-istoriya-bg: #58538b;
-    --color-podval-bg: #3d348b;
+    --color-story-bg: #58538b;
+    --color-footer-bg: #3d348b;
     --color-text: #ffffff;
     --color-text-muted: rgba(255, 255, 255, 0.85);
 
@@ -13,15 +11,13 @@
 
 
 html[data-theme="dark"] {
-    --color-shapka-bg: #32004e;
+    --color-header-bg: #32004e;
     --color-knopka-bg: #DDCDFF;
-    --color-istoriya-bg: #322c52;
-    --color-podval-bg: #201a3d;
+    --color-story-bg: #322c52;
+    --color-footer-bg: #201a3d;
     --color-text: #ffffff;
     --color-text-muted: rgba(255, 255, 255, 0.75);
 }
-
-/* база */
 
 * {
     margin: 0;
@@ -35,7 +31,7 @@ html {
 
 body {
     font-family: var(--font-main);
-    background-color: var(--color-istoriya-bg);
+    background-color: var(--color-story-bg);
     color: var(--color-text);
     line-height: 1.4;
     transition: background-color 0.3s ease;
@@ -47,10 +43,9 @@ img {
     height: auto;
 }
 
-/* шапка */
 
-.shapka {
-    background-color: var(--color-shapka-bg);
+.header {
+    background-color: var(--color-header-bg);
     height: 110px;
     position: sticky;
     top: 0;
@@ -58,7 +53,7 @@ img {
     transition: background-color 0.3s ease;
 }
 
-.shapka__konteyner {
+.header__container {
     max-width: 1920px;
     height: 100%;
     margin: 0 auto;
@@ -68,7 +63,7 @@ img {
     justify-content: space-between;
 }
 
-.shapka__logo {
+.header__logo {
     font-family: var(--font-main);
     font-weight: 700;
     font-size: 48px;
@@ -76,7 +71,7 @@ img {
     letter-spacing: 0;
 }
 
-.shapka__knopka-temy {
+.header__theme-btn {
     width: 130px;
     height: 59px;
     background-color: var(--color-knopka-bg);
@@ -90,27 +85,26 @@ img {
     transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-.shapka__knopka-temy:hover {
+.header__theme-btn:hover {
     transform: scale(1.05);
 }
 
-.shapka__knopka-temy:active {
+.header__theme-btn:active {
     transform: scale(0.97);
 }
 
-/* экран */
 
-.glavnyi {
+.hero {
     min-height: 750px;
     background-color: #7a2fc9;
-    background-image: url(img/фон.png);
+    background-image: url(img/background.png);
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
 }
 
-.glavnyi__konteyner {
+.hero__container {
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
@@ -122,14 +116,14 @@ img {
     flex-wrap: wrap;
 }
 
-.glavnyi__tekst {
+.hero__text {
     flex: 0 1 663px; 
     min-width: 280px;
     max-width: 663px;
     padding-top: 126px; 
 }
 
-.glavnyi__zagolovok {
+.hero__title {
     font-weight: 700;
     font-size: 96px;
     line-height: 1.4;
@@ -137,7 +131,7 @@ img {
     margin-bottom: -9px; 
 }
 
-.glavnyi__podzagolovok {
+.hero__subtitle {
     font-weight: 700;
     font-size: 24px;
     line-height: 1.4;
@@ -145,7 +139,7 @@ img {
     max-width: 646px;
 }
 
-.glavnyi__kartinki {
+.hero__images {
     flex: 0 1 842px;
     min-width: 280px;
     max-width: 842px;
@@ -154,7 +148,7 @@ img {
     gap: 24px; 
 }
 
-.glavnyi__kartinka {
+.hero__image {
     width: 100%;
     aspect-ratio: 409 / 273; 
     height: auto;
@@ -163,14 +157,13 @@ img {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* 4 секции */
 
-.istoriya {
-    background-color: var(--color-istoriya-bg);
+.story {
+    background-color: var(--color-story-bg);
     transition: background-color 0.3s ease;
 }
 
-.istoriya__konteyner {
+.story__container {
     max-width: 1920px;
     min-height: 945px;
     margin: 0 auto;
@@ -179,7 +172,7 @@ img {
     flex-direction: column;
 }
 
-.istoriya__zagolovok {
+.story__title {
     font-weight: 700;
     font-size: 96px;
     line-height: 1.4;
@@ -188,7 +181,7 @@ img {
     margin-bottom: 25px; 
 }
 
-.istoriya__opisanie {
+.story__description {
     font-weight: 700;
     font-size: 28px;
     line-height: 1.4;
@@ -197,14 +190,14 @@ img {
     margin-bottom: 66px; 
 }
 
-.istoriya__kartinki {
+.story__images {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 153px; 
     margin-top: auto;
 }
 
-.istoriya__kartinka {
+.story__image {
     width: 100%;
     aspect-ratio: 476 / 334; 
     height: auto;
@@ -214,40 +207,37 @@ img {
     transition: transform 0.3s ease;
 }
 
-.istoriya__kartinka:hover {
+.story__image:hover {
     transform: translateY(-6px);
 }
 
-/* истории */
-.istoriya--sprava .istoriya__zagolovok,
-.istoriya--sprava .istoriya__opisanie {
+.story--right .story__title,
+.story--right .story__description {
     margin-left: auto;
     text-align: right;
 }
 
-.istoriya--centr .istoriya__zagolovok,
-.istoriya--centr .istoriya__opisanie {
+.story--center .story__title,
+.story--center .story__description {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
-.istoriya--centr .istoriya__opisanie {
+.story--center .story__description {
     max-width: 1726px;
 }
 
-.istoriya--centr .istoriya__kartinki {
+.story--center .story__images {
     justify-content: center;
 }
 
-/* подвал */
-
-.podval {
-    background-color: var(--color-podval-bg);
+.footer {
+    background-color: var(--color-footer-bg);
     transition: background-color 0.3s ease;
 }
 
-.podval__konteyner {
+.footer__container {
     max-width: 1920px;
     min-height: 358px;
     margin: 0 auto;
@@ -259,7 +249,7 @@ img {
     text-align: center;
 }
 
-.podval__tekst {
+.footer__text {
     font-weight: 700;
     font-size: 40px;
     line-height: 1.4;
@@ -267,7 +257,7 @@ img {
     margin-bottom: 109px; 
 }
 
-.podval__heshteg {
+.footer__hashtag {
     font-weight: 700;
     font-size: 13px;
     letter-spacing: 1.3px;
@@ -276,51 +266,49 @@ img {
     opacity: 0.5;
 }
 
-/* моб. адаптация (доделать) */
-
 @media (max-width: 768px) {
-    .shapka__konteyner { padding: 0 16px; }
-    .shapka__logo { font-size: 22px; }
-    .shapka__knopka-temy { width: 84px; height: 42px; font-size: 15px; border-radius: 10px; }
+    .header__container { padding: 0 16px; }
+    .header__logo { font-size: 22px; }
+    .header__theme-btn { width: 84px; height: 42px; font-size: 15px; border-radius: 10px; }
  
-    .glavnyi { min-height: auto; }
-    .glavnyi__konteyner { padding: 40px 16px; gap: 30px; }
-    .glavnyi__zagolovok { font-size: 36px; margin-bottom: 16px; }
-    .glavnyi__podzagolovok { font-size: 16px; }
-    .glavnyi__kartinki { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .glavnyi__kartinka { border-radius: 20px; }
+    .hero { min-height: auto; }
+    .hero__container { padding: 40px 16px; gap: 30px; }
+    .hero__title { font-size: 36px; margin-bottom: 16px; }
+    .hero__subtitle { font-size: 16px; }
+    .hero__images { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .hero__image { border-radius: 20px; }
  
-    .istoriya__konteyner { padding: 40px 16px; }
-    .istoriya__zagolovok { font-size: 30px; margin-bottom: 16px; }
-    .istoriya__opisanie { font-size: 16px; margin-bottom: 24px; }
-    .istoriya__kartinki { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-    .istoriya__kartinka { border-radius: 20px; }
+    .story__container { padding: 40px 16px; }
+    .story__title { font-size: 30px; margin-bottom: 16px; }
+    .story__description { font-size: 16px; margin-bottom: 24px; }
+    .story__images { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .story__image { border-radius: 20px; }
  
-    .istoriya--sprava .istoriya__zagolovok,
-    .istoriya--sprava .istoriya__opisanie { text-align: left; margin-left: 0; }
-    .istoriya--centr .istoriya__zagolovok,
-    .istoriya--centr .istoriya__opisanie { text-align: center; }
+    .story--right .story__title,
+    .story--right .story__description { text-align: left; margin-left: 0; }
+    .story--center .story__title,
+    .story--center .story__description { text-align: center; }
  
-    .podval__konteyner { padding: 30px 16px; }
-    .podval__tekst { font-size: 22px; margin-bottom: 24px; }
+    .footer__container { padding: 30px 16px; }
+    .footer__text { font-size: 22px; margin-bottom: 24px; }
 }
  
 @media (max-width: 480px) {
-    .shapka { height: 19px; }
-    .shapka__konteyner { padding: 0 5px 0 4px; }
-    .shapka__logo { font-size: 8.4px; }
-    .shapka__knopka-temy { width: 22.7px; height: 10.3px; font-size: 4.2px; border-radius: 2.6px; }
+    .header { height: 19px; }
+    .header__container { padding: 0 5px 0 4px; }
+    .header__logo { font-size: 8.4px; }
+    .header__theme-btn { width: 22.7px; height: 10.3px; font-size: 4.2px; border-radius: 2.6px; }
  
-    .glavnyi { min-height: 131px; }
-    .glavnyi__konteyner {
+    .hero { min-height: 131px; }
+    .hero__container {
         flex-direction: row;
         padding: 15.6px 13.1px 15.6px 26.8px;
         gap: 7px;
     }
-    .glavnyi__tekst { flex: 0 1 116px; min-width: 0; max-width: 116px; padding-top: 22px; }
-    .glavnyi__zagolovok { font-size: 16.8px; margin-bottom: -1.6px; }
-    .glavnyi__podzagolovok { font-size: 4.2px; max-width: 113px; }
-    .glavnyi__kartinki {
+    .hero__text { flex: 0 1 116px; min-width: 0; max-width: 116px; padding-top: 22px; }
+    .hero__title { font-size: 16.8px; margin-bottom: -1.6px; }
+    .hero__subtitle { font-size: 4.2px; max-width: 113px; }
+    .hero__images {
         flex: 0 1 147.3px;
         width: auto;
         min-width: 0;
@@ -328,26 +316,24 @@ img {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 4.2px;
     }
-    .glavnyi__kartinka { border-radius: 6.6px; box-shadow: 0 1.7px 5.2px rgba(0, 0, 0, 0.25); }
+    .hero__image { border-radius: 6.6px; box-shadow: 0 1.7px 5.2px rgba(0, 0, 0, 0.25); }
  
-    .istoriya__konteyner { min-height: 165px; padding: 10px 16.3px 13.1px; }
-    .istoriya__zagolovok { font-size: 16.8px; max-width: 240px; margin-bottom: 4.4px; }
-    .istoriya__opisanie { font-size: 4.9px; max-width: 129px; margin-bottom: 11.5px; }
-    .istoriya__kartinki { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26.8px; }
-    .istoriya__kartinka { border-radius: 6.6px; box-shadow: 0 1.7px 5.2px rgba(0, 0, 0, 0.25); }
+    .story__container { min-height: 165px; padding: 10px 16.3px 13.1px; }
+    .story__title { font-size: 16.8px; max-width: 240px; margin-bottom: 4.4px; }
+    .story__description { font-size: 4.9px; max-width: 129px; margin-bottom: 11.5px; }
+    .story__images { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26.8px; }
+    .story__image { border-radius: 6.6px; box-shadow: 0 1.7px 5.2px rgba(0, 0, 0, 0.25); }
  
-    .istoriya--sprava .istoriya__zagolovok,
-    .istoriya--sprava .istoriya__opisanie { text-align: right; margin-left: auto; margin-right: 0; }
-    .istoriya--centr .istoriya__zagolovok,
-    .istoriya--centr .istoriya__opisanie { text-align: center; margin-left: auto; margin-right: auto; }
-    .istoriya--centr .istoriya__opisanie { max-width: 302px; }
+    .story--right .story__title,
+    .story--right .story__description { text-align: right; margin-left: auto; margin-right: 0; }
+    .story--center .story__title,
+    .story--center .story__description { text-align: center; margin-left: auto; margin-right: auto; }
+    .story--center .story__description { max-width: 302px; }
  
-    .podval__konteyner { min-height: 62.6px; padding: 7.5px 4px 3px; }
-    .podval__tekst { font-size: 7px; margin-bottom: 29.3px; }
-    .podval__heshteg { font-size: 2.3px; letter-spacing: 0.2px; }
+    .footer__container { min-height: 62.6px; padding: 7.5px 4px 3px; }
+    .footer__text { font-size: 7px; margin-bottom: 29.3px; }
+    .footer__hashtag { font-size: 2.3px; letter-spacing: 0.2px; }
 }
- 
-/* доступность */
  
 @media (prefers-reduced-motion: reduce) {
     * {
